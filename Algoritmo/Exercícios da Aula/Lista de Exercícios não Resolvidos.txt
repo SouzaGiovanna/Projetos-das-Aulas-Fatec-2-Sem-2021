@@ -8,11 +8,6 @@ Desenvolva um algoritmo que calcule e mostre o valor da seguinte série: Série 
 
 ==========================================================================================
 
-Exercício 07. 
-Desenvolva um algoritmo que receba o nome e a idade de 10 pessoas, verifique e mostre o nome e a idade da pessoa mais velha e da pessoa mais nova.
-
-==========================================================================================
-
 Exercício 08. 
 Desenvolva um algoritmo que receba o sexo, a idade e a experiência no trabalho (s/n) de 50 candidatos a uma vaga de uma empresa, calcule e mostre: o número de candidatos do sexo masculino; o número de candidatos do sexo feminino; a idade média dos candidatos que já têm experiência no trabalho; a porcentagem de homens com mais de 50 anos do total de homens; o número de mulheres com idade inferior a 30 e com experiência no trabalho; e a menor e a maior idade entre as mulheres que já têm experiência no trabalho.
 
