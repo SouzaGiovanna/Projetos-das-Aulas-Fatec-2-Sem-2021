@@ -108,5 +108,25 @@ int main() {
     
     printf("\n====================RESULTADO====================\n\n");
     
-    //Verificar quem ganhou
+    //Verificar quem vai ser prefeito
+    if(votos_C1 > votos_C2 && votos_C1 > votos_C3 && votos_C1 > votos_C4){
+        printf("O Candidato a Prefeito mais Votado...........: Candidato 1\n\n");
+    } else if(votos_C2 > votos_C1 && votos_C2 > votos_C3 && votos_C2 > votos_C4){
+        printf("O Candidato a Prefeito mais Votado...........: Candidato 2\n\n");
+    } else if(votos_C3 > votos_C2 && votos_C3 > votos_C1 && votos_C3 > votos_C4){
+        printf("O Candidato a Prefeito mais Votado...........: Candidato 3\n\n");
+    } else {
+        printf("O Candidato a Prefeito mais Votado...........: Candidato 4\n\n");
+    }
+    
+    //Verificar quem vai ser vereador
+    if(votos_V1 > votos_V2 && votos_V1 > votos_V3 && votos_V1 > votos_V4){
+        printf("O Candidato a Vereador mais Votado...........: Candidato 1\n\n");
+    } else if(votos_V2 > votos_V1 && votos_V2 > votos_V3 && votos_V2 > votos_V4){
+        printf("O Candidato a Vereador mais Votado...........: Candidato 2\n\n");
+    } else if(votos_V3 > votos_V2 && votos_V3 > votos_V1 && votos_V3 > votos_V4){
+        printf("O Candidato a Vereador mais Votado...........: Candidato 3\n\n");
+    } else {
+        printf("O Candidato a Vereador mais Votado...........: Candidato 4\n\n");
+    }
 }
