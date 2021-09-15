@@ -43,8 +43,8 @@ int main() {
             } else if (strcmp (voto, "VN") == 0){
                 votos_VN_prefeito++;
             } else {
-				votos_invalidos++;
-			}
+		votos_invalidos++;
+		}
             
             printf("\nVoto ao Candidado a Vereador....: ");
             scanf("%s", &voto);
