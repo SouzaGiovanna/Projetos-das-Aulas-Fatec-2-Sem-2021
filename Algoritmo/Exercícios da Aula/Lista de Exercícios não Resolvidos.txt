@@ -8,17 +8,8 @@ Desenvolva um algoritmo que calcule e mostre o valor da seguinte série: Série 
 
 ==========================================================================================
 
-Exercício 08. 
-Desenvolva um algoritmo que receba o sexo, a idade e a experiência no trabalho (s/n) de 50 candidatos a uma vaga de uma empresa, calcule e mostre: o número de candidatos do sexo masculino; o número de candidatos do sexo feminino; a idade média dos candidatos que já têm experiência no trabalho; a porcentagem de homens com mais de 50 anos do total de homens; o número de mulheres com idade inferior a 30 e com experiência no trabalho; e a menor e a maior idade entre as mulheres que já têm experiência no trabalho.
-
-==========================================================================================
-
 Exercício 09. 
 Desenvolva um algoritmo que calcule e mostre o valor da seguinte série:
 Série = 1/2 – 2/4 + 3/6 – 4/8 + 5/10 – 6/12 + ... – 50/100
 
-==========================================================================================
-
-Exercício 10. 
-Desenvolva um algoritmo que receba o salário de Clarisbela, calcule e mostre o salário de Florentina que é um terço do salário de Clarisbela. Além disso, calcule e mostre quantos meses são necessários para que o dinheiro aplicado de Florentina seja igual ou maior que o dinheiro aplicado de Clarisbela, considerando que Clarisbela aplicou todo o seu salário na poupança, que rende 2% ao mês, e que Florentina aplicou todo o seu salário no fundo de renda fixa, que rende 5% ao mês
 ==========================================================================================
