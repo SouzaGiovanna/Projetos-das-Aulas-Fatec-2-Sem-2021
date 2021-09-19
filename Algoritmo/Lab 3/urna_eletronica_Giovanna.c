@@ -82,7 +82,7 @@ int main() {
     printf("Identificação da Seção e da Zona Eleitoral...: %c\n", zona_secao_eleitoral);
     printf("Total de Eleitores que podem votar...........: %d\n", eleitores_esperados);
     printf("Total de Eleitores que votaram...............: %d\n", eleitores_presentes);
-    printf("Total de Eleitores que faltaram..............: %d\n", eleitores_esperados - eleitores_presentes);
+    printf("Percentual de Eleitores que faltaram..........: %d %\n", ((eleitores_esperados - eleitores_presentes) / eleitores_esperados) * 100);
     printf("Código de Indentificação da Urna Eletrônica..: %d\n", cod_urna);
     printf("Total de Votos Brancos e Nulos para Prefeito.: %d\n", votos_VB_prefeito + votos_VN_prefeito);
     printf("Total de Votos Brancos e Nulos para Vereador.: %d\n", votos_VB_vereador + votos_VN_vereador);
