@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-// Disciplina   : [Algoritimo e Lógica de Programação]
+// Disciplina  : [Algoritimo e Lógica de Programação]
 // Professor   : Eliane Santiago
+// Turma       : 1° Desenvolvimento de Software Multiplataforma
 // Descrição   : Sistema de votação como a urna eletrônica TRE
 // Autor(a)    : Ana Claudia Rescia Royo Felippe - RA:
 // Autor(a)    : Evaristo Batista Tavares Esteves - RA: 1111392121008
