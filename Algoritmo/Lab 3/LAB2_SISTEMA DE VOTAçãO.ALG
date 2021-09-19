@@ -18,22 +18,31 @@ Var
 Inicio
 
    //Inicializando a urna
-
-   escreval("Justiça Eleitora do Brasil")
-   escreval(" ")
-   escreva("Informe a Zona Eleitoral: ")
+   escreval("+-------------------------------------------------------------------+")
+   escreval("|                                                                   |")
+   escreval("|                     Justiça Eleitora do Brasil                    |")
+   escreval("|                                                                   |")
+   escreval("+-------------------------------------------------------------------+")
+   escreval("|                                                                   |")
+   escreva ("|   Informe a Zona Eleitoral: ")
    leia(zeid)
-   escreval(" ")
-   escreva("Informa a Seção Eleitoral: ")
+   escreval("|                                                                   |")
+   escreva ("|   Informa a Seção Eleitoral: ")
    leia(seid)
-   escreval(" ")
-   escreva("Informe a quantidade de Eleitores desta Seção Eleitoral: ")
+   escreval("|                                                                   |")
+   escreva ("|   Informa o ID da Urna Eletrônica: ")
+   leia(idurna)
+   escreval("|                                                                   |")
+   escreva ("|   Informe a quantidade de Eleitores desta Seção Eleitoral: ")
    leia(tee)
-   escreval(" ")
-   escreva("Informe o ID do Presidente da Mesa: ")
+   escreval("|                                                                   |")
+   escreva ("|   Informe o ID do Presidente da Mesa: ")
    leia(idmesario)
+   escreval("|                                                                   |")
+   escreval("+-------------------------------------------------------------------+")
 
-   ctev <- 0
+   // Inicializando as variáveis
+   ctev <- 1
    tpref1 <- 0
    tpref2 <- 0
    tpref3 <- 0
@@ -47,19 +56,33 @@ Inicio
    enquanto ctev <= tee faca
 
       limpatela
-      escreva("Informe o Id do Eleitor: ")
+      escreval("+-------------------------------------------------------------------+")
+      escreval("|                     Justiça Eleitora do Brasil                    |")
+      escreval("+-------------------------------------------------------------------+")
+      escreval("| Zona Eleitoral: ", zeid, "   |   Seção Eleitoral: ", seid ,"     |   Urna: ", idurna, "    |")
+      escreval("+-------------------------------------------------------------------+")
+      escreva("| Informe o Id do Eleitor: ")
       leia(ideleitor)
 
-      se(ideleitor <> idmesario)entao
+      //Caso o ID do Presidente da Mesa seja digitado, será encerrada a votação!!
 
-         escreval("Votação para Prefeito")
-         escreval(" ")
-         escreval(" [ C1 ] - Candidato 1 ")
-         escreval(" [ C2 ] - Candidato 2 ")
-         escreval(" [ C3 ] - Candidato 3 ")
-         escreval(" [ C4 ] - Candidato 4 ")
-         escreval(" [ BC ] - Branco ")
-         escreval(" [ NL ] - Nulo")
+      se(ideleitor <> idmesario)entao
+         limpatela
+         escreval("+-------------------------------------------------------------------+")
+         escreval("|                     Justiça Eleitora do Brasil                    |")
+         escreval("+-------------------------------------------------------------------+")
+         escreval("| Zona Eleitoral: ", zeid, "   |    Seção Eleitoral: ", seid ,"     |   Urna: ", idurna, "    |")
+         escreval("+-------------------------------------------------------------------+")
+         escreval("|                     Votação para Prefeito                         |")
+         escreval("+-------------------------------------------------------------------+")
+         escreval("|                                                                   |")
+         escreval("|                    [ C1 ] - Candidato 1                           |")
+         escreval("|                    [ C2 ] - Candidato 2                           |")
+         escreval("|                    [ C3 ] - Candidato 3                           |")
+         escreval("|                    [ C4 ] - Candidato 4                           |")
+         escreval("|                    [ BC ] - Branco                                |")
+         escreval("|                    [ NL ] - Nulo                                  |")
+         escreva ("|                      ")
          leia(opcpref)
 
          escolha opcpref
@@ -79,26 +102,32 @@ Inicio
          fimescolha
 
          limpatela
-
-         escreval("Votação para Vereador")
-         escreval(" ")
-         escreval(" [ V1 ] - Candidato 1 ")
-         escreval(" [ V2 ] - Candidato 2 ")
-         escreval(" [ V3 ] - Candidato 3 ")
-         escreval(" [ V4 ] - Candidato 4 ")
-         escreval(" [ BC ] - Branco ")
-         escreval(" [ NL ] - Nulo")
+         escreval("+-------------------------------------------------------------------+")
+         escreval("|                     Justiça Eleitora do Brasil                    |")
+         escreval("+-------------------------------------------------------------------+")
+         escreval("| Zona Eleitoral: ", zeid, "   |    Seção Eleitoral: ", seid ,"     |   Urna: ", idurna, "    |")
+         escreval("+-------------------------------------------------------------------+")
+         escreval("|                     Votação para Vereador                         |")
+         escreval("+-------------------------------------------------------------------+")
+         escreval("|                                                                   |")
+         escreval("|                    [ V1 ] - Candidato 1                           |")
+         escreval("|                    [ V2 ] - Candidato 2                           |")
+         escreval("|                    [ V3 ] - Candidato 3                           |")
+         escreval("|                    [ V4 ] - Candidato 4                           |")
+         escreval("|                    [ BC ] - Branco                                |")
+         escreval("|                    [ NL ] - Nulo                                  |")
+         escreva ("|                      ")
          leia(opcver)
 
-         escolha opcpref
+         escolha opcver
 
-         caso "C1"
+         caso "V1"
             tver1 <- tver1 + 1
-         caso "C2"
+         caso "V2"
             tver2 <- tver2 + 1
-         caso "C3"
+         caso "V3"
             tver3 <- tver3 + 1
-         caso "C4"
+         caso "V4"
             tver4 <- tver4 + 1
          caso "BC"
             tverbc <- tverbc + 1
@@ -117,33 +146,44 @@ Inicio
 
    abtc <- (((tee - tev) / tee)) * 100)
    limpatela
-   
-   escreval("Fim da Votação da urna, ", idurna )
-   escreval("Zona Eleitora: ", zeid)
-   escreval("Seção Eleitoral: ", seid)
-   escreval("Totalização dos Votos")
-   
-   escreval("Total de Eleitores da Seção Eleitoral", tee)
-   escreval("Total de Eleitores Votantes: ", tev)
-   escreval("Precentual de Abstenção: ",  abtc, " %")
-   
-   escreval("Totalização de Votos para Prefeito")
-   escreval("Candidato 1  ", tpref1, " votos")
-   escreval("Candidato 2  ", tpref2, " votos")
-   escreval("Candidato 3  ", tpref3, " votos")
-   escreval("Candidato 4  ", tpref4, " votos")
-   escreval("Votos Brancos", tprefbc, " votos")
-   escreval("Votos Nulos  ", tprefnl, " votos")
-   
+   escreval("+-------------------------------------------------------------------+")
+   escreval("|                     Justiça Eleitora do Brasil                    |")
+   escreval("+-------------------------------------------------------------------+")
+   escreval("| Zona Eleitoral: ", zeid, "   |    Seção Eleitoral: ", seid ,"     |")
+   escreval("+-------------------------------------------------------------------+")
+   escreval("|                     Fim da Votação da urna, ", idurna, "                |")
+   escreval("+-------------------------------------------------------------------+")
+   escreval("|                     TOTALIZAÇÃO DOS VOTOS                         |")
+   escreval("+-------------------------------------------------------------------+")
+   escreval("|                                                                   |")
+   escreval("|   Total de Eleitores da Seção Eleitoral", tee)
+   escreval("|   Total de Eleitores Votantes: ", tev)
+   escreval("|   Precentual de Abstenção: ",  abtc, " %")
+   escreval("|                                                                   |")
+   escreval("+-------------------------------------------------------------------+")
+   escreval("|                                                                   |")
+   escreval("|   Totalização de Votos para Prefeito")
+   escreval("|                                                                   |")
+   escreval("|   Candidato 1  ", tpref1, " votos")
+   escreval("|   Candidato 2  ", tpref2, " votos")
+   escreval("|   Candidato 3  ", tpref3, " votos")
+   escreval("|   Candidato 4  ", tpref4, " votos")
+   escreval("|   Votos Brancos", tprefbc, " votos")
+   escreval("|   Votos Nulos  ", tprefnl, " votos")
+   escreval("|                                                                   |")
+   escreval("+-------------------------------------------------------------------+")
+   escreval("|                                                                   |")
+   escreval("|   Totalização de Votos para Vereadores")
+   escreval("|                                                                   |")
+   escreval("|   Candidato 1  ", tver1, " votos")
+   escreval("|   Candidato 2  ", tver2, " votos")
+   escreval("|   Candidato 3  ", tver3, " votos")
+   escreval("|   Candidato 4  ", tver4, " votos")
+   escreval("|   Votos Brancos", tverbc, " votos")
+   escreval("|   Votos Nulos  ", tvernl, " votos")
+   escreval("|                                                                   |")
+   escreval("+-------------------------------------------------------------------+")
 
-   escreval("Totalização de Votos para Vereadores")
-   escreval("Candidato 1  ", tver1, " votos")
-   escreval("Candidato 2  ", tver2, " votos")
-   escreval("Candidato 3  ", tver3, " votos")
-   escreval("Candidato 4  ", tver4, " votos")
-   escreval("Votos Brancos", tverbc, " votos")
-   escreval("Votos Nulos  ", tvernl, " votos")
 
-   
 
 Fimalgoritmo
