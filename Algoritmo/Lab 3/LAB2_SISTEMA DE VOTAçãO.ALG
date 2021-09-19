@@ -2,10 +2,10 @@ Algoritmo "Lab2_Sistema de Votação"
 // Disciplina   : [Algoritimo e Lógica de Programação]
 // Professor   : Eliane Santiago
 // Descrição   : Sistema de votação como a urna eletrônica TRE
-// Autor(a)    : Ana Claudia Rescia Royo Felippe
-// Autor(a)    : Evaristo Batista
-// Autor(a)    : Giovanna
-// Autor(a)    : Marco Royo Felippe
+// Autor(a)    : Ana Claudia Rescia Royo Felippe - RA:
+// Autor(a)    : Evaristo Batista Tavares Esteves - RA: 1111392121008
+// Autor(a)    : Giovanna de Souza Almeida - RA: 1111392121031
+// Autor(a)    : Marco Royo Felippe - RA:
 // Data atual  : 19/09/2021
 Var
 

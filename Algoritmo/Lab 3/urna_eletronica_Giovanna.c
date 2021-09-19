@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+// Disciplina   : [Algoritimo e Lógica de Programação]
+// Professor   : Eliane Santiago
+// Descrição   : Sistema de votação como a urna eletrônica TRE
+// Autor(a)    : Ana Claudia Rescia Royo Felippe - RA:
+// Autor(a)    : Evaristo Batista Tavares Esteves - RA: 1111392121008
+// Autor(a)    : Giovanna de Souza Almeida - RA: 1111392121031
+// Autor(a)    : Marco Royo Felippe - RA:
+// Data atual  : 19/09/2021
+
 int main() {
     char zona_secao_eleitoral, voto[2];
     int cod_urna, cod_saida = 0, eleitores_esperados, eleitores_presentes = 0, votos_C1 = 0, votos_C2 = 0, votos_C3 = 0, votos_C4 = 0, votos_VB_prefeito = 0, votos_VN_prefeito = 0, votos_V1 = 0, votos_V2 = 0, votos_V3 = 0, votos_V4 = 0, votos_VB_vereador = 0, votos_VN_vereador = 0, votos_PDB = 0, votos_PSB = 0, votos_invalidos = 0;
