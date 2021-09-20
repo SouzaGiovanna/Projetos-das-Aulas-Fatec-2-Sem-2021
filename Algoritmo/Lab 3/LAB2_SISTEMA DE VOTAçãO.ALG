@@ -3,17 +3,17 @@ Algoritmo "Lab2_Sistema de Votação"
 // Professor   : Eliane Santiago
 // Turma       : 1° Desenvolvimento de Software Multiplataforma
 // Descrição   : Sistema de votação como a urna eletrônica TRE
-// Autor(a)    : Ana Claudia Rescia Royo Felippe - RA:
+// Autor(a)    : Ana Claudia Rescia Royo Felippe - RA: 1111392121026
 // Autor(a)    : Evaristo Batista Tavares Esteves - RA: 1111392121008
 // Autor(a)    : Giovanna de Souza Almeida - RA: 1111392121031
-// Autor(a)    : Marco Royo Felippe - RA:
+// Autor(a)    : Marco Royo Felippe - RA: 1111392121039
 // Data atual  : 19/09/2021
 Var
 
    zeid, seid, tee, tev, ctev, idmesario, ideleitor, idurna : inteiro
    tprefbc, tprefnl, tpref1, tpref2, tpref3, tpref4 : inteiro
    tverbc, tvernl, tver1, tver2, tver3, tver4 : inteiro
-   opcpref, opcver : caractere
+   opcpref, opcver, prefvencedor,vervencedor : caractere
    abtc : real
 
 Inicio
@@ -67,6 +67,8 @@ Inicio
 
       //Caso o ID do Presidente da Mesa seja digitado, será encerrada a votação!!
 
+      //Iniciando a votação de Prefeitos
+
       se(ideleitor <> idmesario)entao
          limpatela
          escreval("+-------------------------------------------------------------------+")
@@ -101,6 +103,9 @@ Inicio
          outrocaso
             tprefnl <- tprefnl +1
          fimescolha
+
+
+         //Iniciando a votação de Vereadores
 
          limpatela
          escreval("+-------------------------------------------------------------------+")
@@ -145,7 +150,50 @@ Inicio
 
    fimenquanto
 
+   //Calculando o % de abstenção
+
    abtc <- (((tee - tev) / tee)) * 100)
+
+   //Verificando os ganhadores
+
+   se((tpref1 > tpref2) e (tpref1 > tpref3) e (tpref1 > tpref4))entao
+      prefvencedor <- "Candidato_1"
+   senao
+      se((tpref2 > tpref1) e (tpref2 > tpref3) e (tpref2 > tpref4))entao
+         prefvencedor <- "Candidato_2"
+      senao
+         se((tpref3 > tpref1) e (tpref3 > tpref2) e (tpref3 > tpref4))entao
+            prefvencedor <- "Candidato_3"
+         senao
+            se((tpref4 > tpref1) e (tpref4 > tpref2) e (tpref4 > tpref3))entao
+               prefvencedor <- "Candidato_4"
+            senao
+               prefvencedor <- "Eleição para prefeito empatada!!"
+            fimse
+         fimse
+      fimse
+   fimse
+
+
+   se((tver1 > tver2) e (tver1 > tver3) e (tver1 > tver4))entao
+      vervencedor <- "Candidato_1"
+   senao
+      se((tver2 > tver1) e (tver2 > tver3) e (tver2 > tver4))entao
+         vervencedor <- "Candidato_2"
+      senao
+         se((tver3 > tver1) e (tver3 > tver2) e (tver3 > tver4))entao
+            vervencedor <- "Candidato_3"
+         senao
+            se((tver4 > tver1) e (tver4 > tver2) e (tver4 > tver3))entao
+               vervencedor <- "Candidato_4"
+            senao
+               vervencedor <- "Eleição para vereador empatada!!"
+            fimse
+         fimse
+      fimse
+   fimse
+
+   //Exibindo
    limpatela
    escreval("+-------------------------------------------------------------------+")
    escreval("|                     Justiça Eleitora do Brasil                    |")
@@ -172,6 +220,7 @@ Inicio
    escreval("|   Votos Brancos", tprefbc, " votos")
    escreval("|   Votos Nulos  ", tprefnl, " votos")
    escreval("|                                                                   |")
+   escreval("|   O vencedor da Eleição:  ", prefvencedor, "                             |")
    escreval("+-------------------------------------------------------------------+")
    escreval("|                                                                   |")
    escreval("|   Totalização de Votos para Vereadores")
@@ -183,6 +232,7 @@ Inicio
    escreval("|   Votos Brancos", tverbc, " votos")
    escreval("|   Votos Nulos  ", tvernl, " votos")
    escreval("|                                                                   |")
+   escreval("|   O vencedor da Eleição:  ", vervencedor, "                             |")
    escreval("+-------------------------------------------------------------------+")
 
 

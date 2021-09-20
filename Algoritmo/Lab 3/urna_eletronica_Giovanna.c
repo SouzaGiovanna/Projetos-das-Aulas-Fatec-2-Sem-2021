@@ -4,10 +4,10 @@
 // Professor   : Eliane Santiago
 // Turma       : 1° Desenvolvimento de Software Multiplataforma
 // Descrição   : Sistema de votação como a urna eletrônica TRE
-// Autor(a)    : Ana Claudia Rescia Royo Felippe - RA:
+// Autor(a)    : Ana Claudia Rescia Royo Felippe - RA: 1111392121026
 // Autor(a)    : Evaristo Batista Tavares Esteves - RA: 1111392121008
 // Autor(a)    : Giovanna de Souza Almeida - RA: 1111392121031
-// Autor(a)    : Marco Royo Felippe - RA:
+// Autor(a)    : Marco Royo Felippe - RA: 1111392121039
 // Data atual  : 19/09/2021
 
 int main() {
