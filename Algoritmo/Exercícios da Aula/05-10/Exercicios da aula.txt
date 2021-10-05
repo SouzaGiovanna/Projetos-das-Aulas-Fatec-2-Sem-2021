@@ -1,0 +1,165 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void apresentarMenu(){
+    printf("Escolha a operação");
+    printf("\n *===============================*");
+    printf("\n * [A] Adicao                    *");
+    printf("\n * [B] Subtracao                 *");
+    printf("\n * [C] Divisao                   *");
+    printf("\n * [D] Multiplicacao             *");
+    printf("\n * [E] Fatorial                  *");
+    printf("\n *===============================*");
+    printf("\n      ");
+}
+
+void calcularOperacao(char operacao){
+    int x, y, resultado;
+    switch(operacao){
+        case 'a':
+            printf("\nX: ");
+            scanf("%d", &x);
+            
+            printf("\nY: ");
+            scanf("%d", &y);
+            
+            printf("\n %d + %d = %d", x, y, x + y);
+            break;
+        case 'b':
+            printf("\nX: ");
+            scanf("%d", &x);
+            
+            printf("\nY: ");
+            scanf("%d", &y);
+            
+            printf("\n %d - %d = %d", x, y, x - y);
+            break;
+        case 'c':
+            printf("\nX: ");
+            scanf("%d", &x);
+            
+            printf("\nY: ");
+            scanf("%d", &y);
+            
+            printf("\n %d / %d = %d", x, y, x / y);
+            break;
+        case 'd':
+            printf("\nX: ");
+            scanf("%d", &x);
+            
+            printf("\nY: ");
+            scanf("%d", &y);
+            
+            printf("\n %d * %d = %d", x, y, x * y);
+            break;
+        case 'e':
+            printf("\nX: ");
+            scanf("%d", &x);
+            printf("\n");
+            
+            printf("%d", x);
+            resultado = x;
+            for(int i = --x; i > 0; i--){
+                printf(" * %d", i);
+                resultado *= i;
+            }
+            printf(" = %d", resultado);
+            
+            printf("\nY: ");
+            scanf("%d", &y);
+            printf("\n");
+            
+            resultado = y;
+            for(int i = --y; i > 0; i--){
+                printf(" * %d", i);
+                resultado *= i;
+            }
+            printf(" = %d", resultado);
+            break;
+        default:
+            printf("\nOperação Inválida!");
+    }
+}
+
+void main() {
+    char operacao;
+    
+    apresentarMenu();
+    
+    operacao = getchar();
+    
+    calcularOperacao(operacao);
+}
+
+===============================================
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void apresentarMenu(){
+    printf("Escolha a figura geométrica");
+    printf("\n *===============================*");
+    printf("\n * [A] Quadrado                  *");
+    printf("\n * [B] Triângulo                 *");
+    printf("\n * [C] Retângulo                 *");
+    printf("\n * [D] Trapézio                  *");
+    printf("\n *===============================*");
+    printf("\n      ");
+}
+
+void calcularOperacao(char figura){
+    int base, altura, baseMenor;
+    switch(figura){
+        case 'a':
+            printf("\nLado: ");
+            scanf("%d", &base);
+            
+            printf("\n %d * %d = %d", base, base, base * base);
+            break;
+        case 'b':
+            printf("\nBase: ");
+            scanf("%d", &base);
+            
+            printf("\nAltura: ");
+            scanf("%d", &altura);
+            
+            printf("\n (%d * %d) / 2 = %d", base, altura, (base * altura) / 2);
+            break;
+        case 'c':
+            printf("\nBase: ");
+            scanf("%d", &base);
+            
+            printf("\nAltura: ");
+            scanf("%d", &altura);
+            
+            printf("\n %d * %d = %d", base, altura, base * altura);
+            break;
+        case 'd':
+            printf("\nBase Maior: ");
+            scanf("%d", &base);
+            
+            printf("\nBase Menor: ");
+            scanf("%d", &baseMenor);
+            
+            printf("\nAltura: ");
+            scanf("%d", &altura);
+            
+            printf("\n ((%d + %d) * %d) / 2 = %d", base, baseMenor, altura, ((base * altura) * altura) / 2);
+            break;
+        default:
+            printf("\nOperação Inválida!");
+    }
+}
+
+void main() {
+    char figura;
+    
+    apresentarMenu();
+    
+    figura = getchar();
+    
+    calcularOperacao(figura);
+}
+
+===============================================
+
