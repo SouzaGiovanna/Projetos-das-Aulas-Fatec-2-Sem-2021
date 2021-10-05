@@ -18,7 +18,26 @@ void imprimirObjetivoLab(){
 }
 
 bool divisibilidade4(int num){
+    int dezena = num, divisao, resto = num;
+    bool divisivel;
     
+    if(num > 100){
+        while(dezena > 100){
+            dezena = num - 100;
+        }
+        num = dezena;
+    }
+    
+    divisao = num / 4;
+    resto -= divisao * 4;
+    
+    if(resto == 0){
+        divisivel = true;
+    }
+    else{
+        divisivel = false;
+    }
+    return divisivel;
 }
 
 bool divisibilidade5(int num){
@@ -38,23 +57,25 @@ void main() {
     
     do{
         do{
-            printf("\nDividendo: ");
-            //scanf("%d", &dividendo);
+            printf("\n\nDividendo: ");
+            scanf("%d", &dividendo);
             
             printf("\nDivisor: ");
-            //scanf("%d", &divisor);
+            scanf("%d", &divisor);
             
-            /*switch(divisor){
+            switch(divisor){
                 case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11: case 12: case 15: case 25:
                     valido = true;
                     break;
                 default:
                     printf("\nDivisor invalido! Favor informar novos valores\n");
                     valido = false;
-            }*/
+            }
         }while(!valido);
         
-        do{
+        divisibilidade4(dividendo);
+        
+        /*do{
             printf("\n\nDeseja realizar um novo teste (s/n)? ");
             resposta = getchar();
             
@@ -71,6 +92,6 @@ void main() {
                     valido = false;
                     printf("\n\nResposta invalida! Favor informar uma resposta valida");
             }
-        }while(!valido);
+        }while(!valido);*/
     }while(novamente);
 }
