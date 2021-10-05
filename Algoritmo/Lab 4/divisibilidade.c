@@ -31,13 +31,7 @@ bool divisibilidade4(int num){
     divisao = num / 4;
     resto -= divisao * 4;
     
-    if(resto == 0){
-        divisivel = true;
-    }
-    else{
-        divisivel = false;
-    }
-    return divisivel;
+    return resto == 0;
 }
 
 bool divisibilidade5(int num){
@@ -47,19 +41,20 @@ bool divisibilidade5(int num){
         num -= 10;
     }
     
-    printf("%d\n", num);
-    
-    if(num == 0 || num == 5){
-        divisivel = true;
-    } else {
-        divisivel = false;
-    }
-    
-    return divisivel;
+    return num == 0 || num == 5;
 }
 
 bool divisibilidade6(int num){
+    int resto2 = num, resto3 = num, divisao = num;
     
+    divisao = num / 2;
+    resto2 -= divisao * 2;
+    
+    divisao = num;
+    divisao = num / 3;
+    resto3 -= divisao * 3;
+    
+    return resto2 == 0 && resto3 == 0;
 }
 
 void main() {
@@ -87,9 +82,7 @@ void main() {
             }
         }while(!valido);
         
-        divisibilidade5(dividendo);
-        
-        /*do{
+        do{
             printf("\n\nDeseja realizar um novo teste (s/n)? ");
             resposta = getchar();
             
@@ -106,6 +99,6 @@ void main() {
                     valido = false;
                     printf("\n\nResposta invalida! Favor informar uma resposta valida");
             }
-        }while(!valido);*/
+        }while(!valido);
     }while(novamente);
 }
