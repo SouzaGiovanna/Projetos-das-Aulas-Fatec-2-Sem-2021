@@ -11,6 +11,66 @@
 // Autor(a)    : Marco Royo Felippe - RA: 1111392121039
 // Data atual  : 05/10/2021
 
-int main() {
+void imprimirObjetivoLab(){
+    printf("Programa TESTE DE DIVISIBILIDADE\n");
+    printf("\nO programa tem por objetivo informar se um determinado numero eh ou nao divisivel por outro.\n");
+    printf("\nOs testes de divisibilidade sao validos para os seguintes divisores: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15 e 25.\n");
+}
+
+bool divisibilidade4(int num){
     
+}
+
+bool divisibilidade5(int num){
+    
+}
+
+bool divisibilidade6(int num){
+    
+}
+
+void main() {
+    int dividendo, divisor;
+    char resposta;
+    bool valido = true, divisibilidade, novamente;
+    
+    imprimirObjetivoLab();
+    
+    do{
+        do{
+            printf("\nDividendo: ");
+            //scanf("%d", &dividendo);
+            
+            printf("\nDivisor: ");
+            //scanf("%d", &divisor);
+            
+            /*switch(divisor){
+                case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11: case 12: case 15: case 25:
+                    valido = true;
+                    break;
+                default:
+                    printf("\nDivisor invalido! Favor informar novos valores\n");
+                    valido = false;
+            }*/
+        }while(!valido);
+        
+        do{
+            printf("\n\nDeseja realizar um novo teste (s/n)? ");
+            resposta = getchar();
+            
+            switch(resposta){
+                case 's': case 'S':
+                    valido = true;
+                    novamente = true;
+                    break;
+                case 'n': case 'N':
+                    valido = true;
+                    novamente = false;
+                    break;
+                default:
+                    valido = false;
+                    printf("\n\nResposta invalida! Favor informar uma resposta valida");
+            }
+        }while(!valido);
+    }while(novamente);
 }
