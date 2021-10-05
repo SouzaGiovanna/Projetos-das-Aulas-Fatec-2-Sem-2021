@@ -41,7 +41,21 @@ bool divisibilidade4(int num){
 }
 
 bool divisibilidade5(int num){
+    bool divisivel;
     
+    while(num >= 10){
+        num -= 10;
+    }
+    
+    printf("%d\n", num);
+    
+    if(num == 0 || num == 5){
+        divisivel = true;
+    } else {
+        divisivel = false;
+    }
+    
+    return divisivel;
 }
 
 bool divisibilidade6(int num){
@@ -73,7 +87,7 @@ void main() {
             }
         }while(!valido);
         
-        divisibilidade4(dividendo);
+        divisibilidade5(dividendo);
         
         /*do{
             printf("\n\nDeseja realizar um novo teste (s/n)? ");
