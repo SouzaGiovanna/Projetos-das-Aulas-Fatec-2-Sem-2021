@@ -1,0 +1,323 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+// Disciplina  : [Algoritimo e Lógica de Programação]
+// Professora  : Eliane Santiago
+// Turma       : 1° Desenvolvimento de Software Multiplataforma
+// Descrição   : Escrever um algoritmo/programa que receba dois valores inteiros positivos (x e y) e informar se x é divisível por y. 
+// Autor(a)    : Ana Claudia Rescia Royo Felippe - RA: 1111392121026
+// Autor(a)    : Evaristo Batista Tavares Esteves - RA: 1111392121008
+// Autor(a)    : Giovanna de Souza Almeida - RA: 1111392121031
+// Autor(a)    : Marco Royo Felippe - RA: 1111392121039
+// Data atual  : 05/10/2021
+
+#define ITOA(n) my_itoa((char [41]) { 0 }, (n) )
+
+char *my_itoa(char *dest, int i) {
+  sprintf(dest, "%d", i);
+  return dest;
+}
+
+void imprimirObjetivoLab(){
+    printf("Programa TESTE DE DIVISIBILIDADE\n");
+    printf("\nO programa tem por objetivo informar se um determinado numero eh ou nao divisivel por outro.\n");
+    printf("\nOs testes de divisibilidade sao validos para os seguintes divisores: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15 e 25.\n");
+}
+
+bool divisibilidade2(int num){
+    int unidade = num;
+    bool divisivel;
+    
+    if(num > 10){
+        while(unidade > 10){
+            unidade -= 10;
+        }
+    }
+    
+    switch(unidade){
+        case 0: case 2: case 4: case 6: case 8:
+            divisivel = true;
+            break;
+        default:
+            divisivel = false;
+    }
+    
+    return divisivel;
+}
+
+bool divisibilidade3(int num){
+    bool resultado = false;
+    char *ptr = ITOA(num);
+    size_t length = strlen(ptr);
+    int soma = 0;
+    
+    while(length > 1) {
+        for(int i = 0; i < length; i++) {
+            soma += (ptr[i] - '0');
+        }
+        
+        num = soma;
+        ptr = ITOA(num);
+        length = strlen(ptr);
+        soma = 0;
+    }
+    
+    switch(num) {
+        case 3: case 6: case 9:
+            resultado = true;
+            break;
+    }
+    
+    return resultado;
+}
+
+bool divisibilidade4(int num){
+    bool resultado = false;
+    
+    if(divisibilidade2(num) && divisibilidade2(num / 2)){
+        resultado = true;
+    }
+    
+    return resultado;
+}
+
+bool divisibilidade5(int num){
+    bool divisivel;
+    
+    while(num >= 10){
+        num -= 10;
+    }
+    
+    return num == 0 || num == 5;
+}
+
+bool divisibilidade6(int num){
+    return divisibilidade2(num) && divisibilidade3(num);
+}
+
+bool divisibilidade7(int num){
+    int unidade;
+    bool resultado = false;
+    
+    while(num > 70){
+        unidade = num;
+        
+        while(unidade > 10){
+            unidade -= 10;
+        }
+        
+        num = (num - unidade) / 10;
+        unidade *= 2;
+        
+        num = fabs(num - unidade);
+    }
+    
+    for(int i = 1; i < 10; i++){
+        if(i * 7 == num){
+            resultado = true;
+            i = 10;
+        }
+    }
+    
+    return resultado;
+}
+
+bool divisibilidade8(int num){
+    bool resultado = false;
+    
+    if(divisibilidade2(num) && divisibilidade2(num / 2) && divisibilidade2((num / 2) / 2)){
+        resultado = true;
+    }
+    
+    return resultado;
+}
+
+bool divisibilidade9(int num){
+    bool resultado = false;
+    
+    if(divisibilidade3(num) && divisibilidade3(num / 3)){
+        resultado = true;
+    }
+    
+    return resultado;
+}
+
+bool divisibilidade10(int num){
+    while(num >= 10){
+        num -= 10;
+    }
+    
+    return num == 0;
+}
+
+bool divisibilidade11(int num){
+    int sp = 0, si = 0, soma; //sp - soma par -- si - soma impar
+    char *ptr = ITOA(num);
+    size_t length = strlen(ptr);
+    bool resultado = false;
+    
+    while(length > 1) {
+        for(int i = 0; i < length; i++) {
+            if(divisibilidade2(i)){
+                sp += (ptr[i] - '0');
+            } else {
+                si += (ptr[i] - '0');
+            }
+        }
+        
+        if(si >= sp){
+            soma = sp - si;
+        } else {
+            soma = si - sp;
+        }
+        
+        if(soma < 0){
+            soma *= -1;
+        }
+        num = soma;
+        ptr = ITOA(num);
+        length = strlen(ptr);
+        soma = 0;
+    }
+    
+    if(num == 0){
+        resultado = true;
+    }
+    
+    return resultado;
+}
+
+bool divisibilidade12(int num){
+    bool resultado = false;
+    
+    if(divisibilidade3(num) && divisibilidade4(num)){
+        resultado = true;
+    }
+    
+    return resultado;
+}
+
+bool divisibilidade15(int num){
+    bool resultado = false;
+    
+    if(divisibilidade3(num) && divisibilidade5(num)){
+        resultado = true;
+    }
+    
+    return resultado;
+}
+
+bool divisibilidade25(int num){
+    bool resultado = false;
+    
+    if(divisibilidade5(num) && divisibilidade5(num / 5)){
+        resultado = true;
+    }
+    
+    return resultado;
+}
+
+bool testarDivisibilidade(int dividendo, int divisor){
+    bool resultado;
+    
+    switch(divisor){
+        case 2:
+            resultado = divisibilidade2(dividendo);
+            break;
+        case 3:
+            resultado = divisibilidade3(dividendo);
+            break;
+        case 4:
+            resultado = divisibilidade4(dividendo);
+            break;
+        case 5:
+            resultado = divisibilidade5(dividendo);
+            break;
+        case 6:
+            resultado = divisibilidade6(dividendo);
+            break;
+        case 7:
+            resultado = divisibilidade7(dividendo);
+            break;
+        case 8:
+            resultado = divisibilidade8(dividendo);
+            break;
+        case 9:
+            resultado = divisibilidade9(dividendo);
+            break;
+        case 10:
+            resultado = divisibilidade10(dividendo);
+            break;
+        case 11:
+            resultado = divisibilidade11(dividendo);
+            break;
+        case 12:
+            resultado = divisibilidade12(dividendo);
+            break;
+        case 15:
+            resultado = divisibilidade15(dividendo);
+            break;
+        case 25:
+            resultado = divisibilidade25(dividendo);
+            break;
+        default:
+            resultado = false;
+    }
+    
+    return resultado;
+}
+
+void main() {
+    int dividendo, divisor;
+    char resposta;
+    bool valido = true, divisibilidade, novamente;
+    
+    imprimirObjetivoLab();
+    
+    do{
+        do{
+            printf("\n\nDividendo: ");
+            scanf("%d", &dividendo);
+            
+            printf("\nDivisor: ");
+            scanf("%d", &divisor);
+            
+            switch(divisor){
+                case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9: case 10: case 11: case 12: case 15: case 25:
+                    valido = true;
+                    break;
+                default:
+                    printf("\nDivisor invalido! Favor informar novos valores\n");
+                    valido = false;
+            }
+        }while(!valido);
+        
+        if(testarDivisibilidade(dividendo, divisor)){
+            printf("\n%d eh divisivel por %d", dividendo, divisor);
+        } else {
+            printf("\n%d NAO eh divisivel por %d", dividendo, divisor);
+        }
+        
+        do{
+            printf("\n\nDeseja realizar um novo teste (s/n)? ");
+            resposta = getchar();
+            
+            switch(resposta){
+                case 's': case 'S':
+                    valido = true;
+                    novamente = true;
+                    break;
+                case 'n': case 'N':
+                    valido = true;
+                    novamente = false;
+                    break;
+                default:
+                    valido = false;
+                    printf("\n\nResposta invalida! Favor informar uma resposta valida");
+            }
+        }while(!valido);
+    }while(novamente);
+}
