@@ -27,7 +27,7 @@ h1, h2{
 }
 
 #conteudo{
-    min-height: 448px;
+    min-height: 600px;
     margin: 0px 16px 0px 16px;
 }
 
@@ -193,4 +193,65 @@ input[type=reset]{
 .breadcrumb li+li:before{
     content: "/\00a0";
     color: #000;
+}
+
+/*Menu responsivo*/
+label[for="bt_menu"]{
+    display: none;
+}
+
+#bt_menu{
+    display: none;
+}
+
+/*media query*/
+
+/*media query menu responsivo*/
+@media screen and (max-width:650px){
+    #menu{
+        display: none;
+    }
+
+    label[for="bt_menu"]{
+        display: block;
+        padding: 8px;
+    }
+
+    #bt_menu:checked ~ #menu{
+        display: block;
+    }
+
+    #menu li{
+        position: relative;
+        width: 100%;
+    }
+
+    #menu li ul{
+        position: static;
+        width: 100%;
+    }
+
+    #menu li ul li{
+        position: relative;
+        width: 100%;
+    }
+}
+
+/*media query imagens / video / audio responsivas*/
+@media screen and (max-width:500px){
+    video{
+        padding-left: 6%;
+    }
+
+    audio{
+        padding-left: 16%;
+    }
+
+    #img-comentarios, #img-layout, #img-ul, #img-ol{
+        height: 320px;
+    }
+
+    #img-metadados{
+        height: 100px;
+    }
 }
