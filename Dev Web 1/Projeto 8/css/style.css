@@ -18,7 +18,6 @@ h1, h2{
     position: relative;
     background-color: #B00000;
     margin: 0;
-    /*padding: 16px 16px 5px 16px;*/
 }
 
 #logo{
@@ -238,7 +237,7 @@ label[for="bt_menu"]{
 }
 
 /*media query imagens / video / audio responsivas*/
-@media screen and (max-width:500px){
+@media screen and (max-width:700px){
     video{
         padding-left: 6%;
     }
@@ -253,5 +252,24 @@ label[for="bt_menu"]{
 
     #img-metadados{
         height: 100px;
+    }
+}
+
+/*media query menu acessibilidade*/
+@media screen and (max-width:900px){
+    #acessibilidade li a{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width:760px){
+    #acessibilidade li a{
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:700px){
+    #acessibilidade{
+        display: none;
     }
 }
