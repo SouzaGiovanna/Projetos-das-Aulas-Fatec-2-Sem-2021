@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br"><!--Idioma principal da página-->
+    <head>
+        <!--Metadados-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Aula comentários, metadados, listas e layout">
+        <meta name="keywords" content="HTML, Comentários, Listas, Layout, Elementos Semânticos">
+        <meta name="author" content="Giovanna Souza">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="imagens/logo.png">
+        <title>Aula 6</title>
+    </head>
+    <body>
+        <header id="header"> <!--Topo da página-->
+            <ul id="acessibilidade">
+                <li class="item-acessibilidade"><a href="#conteudo" accesskey="1" title="Ir para o conteúdo do site" class="acessibilidade">[1] Ir para o conteúdo</a></li>
+                <li class="item-acessibilidade"><a href="#menu" accesskey="2" title="Ir para o menu do site" class="acessibilidade">[2] Ir para o menu</a></li>
+                <li class="item-acessibilidade"><a href="#rodape" accesskey="3" title="Ir para o rodapé do site" class="acessibilidade">[3] Ir para o rodapé</a></li>
+                <li class="item-acessibilidade"><a href="./acessibilidade.html" title="Ir para a página de acessibilidade" class="acessibilidade">[4] Acessibilidade</a></li>
+                <li class="item-acessibilidade"><a href="#" title="Utilizar o alto contraste" class="acessibilidade">Alto contraste</a></li>
+                <li class="item-acessibilidade"><a href="#" title="Não utilizar o alto contrate" class="acessibilidade">Sem contraste</a></li>
+                <li class="item-acessibilidade"><a href="#" title="Aumentar o tamanho da fonte" class="acessibilidade">A +</a></li>
+                <li class="item-acessibilidade"><a href="#" title="Diminuir o tamanho da fonte" class="acessibilidade">A -</a></li>
+            </ul>
+            <img id="logo" src="imagens/logo_fatec_branco.png" alt="imagem com a palavra Fatec em cinza e a expressão Zona Leste em vermelho">
+            <nav id="nav-menu">
+                <label for="bt_menu"><img src="imagens/menu hamburguer.png" alt="Menu" width="20px"></label>
+                <input type="checkbox" id="bt_menu">
+                <ul id="menu">
+                    <li class="item-menu"><a href="index.html">Início</a></li>
+                    <li class="item-menu"><a href="comentarios.html">Comentários</a></li>
+                    <li class="item-menu"><a href="metadados.html">Metadados</a></li>
+                    <li class="item-menu"><a href="#">Listas</a>
+                        <ul>
+                            <li><a href="lista_ordenada.html">Lista Ordenada</a></li>
+                            <li><a href="lista_nao_ordenada.html">Lista não Ordenada</a></li>
+                        </ul>
+                    </li>
+                    <li class="item-menu"><a href="layout.html">Layout</a></li>
+                    <li class="item-menu"><a href="javascript.html">JavaScript</a></li>
+                    <li class="item-menu"><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="conteudo"><!--Conteúdo principol da página-->
+            <h1>LISTA ORDENADA</h1>
+            
+            <ul class="breadcrumb">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Listas</a></li>
+                <li>Listas ordenadas</li>
+            </ul>
+            
+            <section>
+                <audio controls>
+                    <source src="./audios/lista-ordenada.mp3" type="audio/mpeg">
+                    Seu navegador não é compatível com áudios no formato mp3.
+                </audio>
+                <p>Uma lista ordenada começa com a tag &lt;ol&gt;. Cada item da lista começa com a tag &lt;li&gt;.</p>
+                <img id="img-ol" src="imagens/ol.png" alt="imagem com conteúdo explicativo sobre listas ordenadas em HTML">
+            </section>
+        </main>
+        <footer id="rodape"><p>Desenvolvido por Giovanna Souza &copy; 2021.</p></footer><!--Rodapé da página-->
+    </body>
+</html>
